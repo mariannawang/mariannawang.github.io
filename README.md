@@ -28,6 +28,6 @@ Find my [CV](https://github.com/mariannawang/mariannawang.github.io/blob/main/Me
   - R
     - Electricity Consumption Prediction Model Evaluation
   
-- Education
+## Education
   - MS in Analytics | University of California, Berkeley (_Aug 2022 - Aug 2023_)
   - BA in Quantitative Economics | University of California, Irvine (_Sep 2019 - June 2022_)
