@@ -9,25 +9,68 @@ This is a repository to showcase skills and share projects in Data Analytics / D
 Find my [CV](https://github.com/mariannawang/mariannawang.github.io/blob/main/Mengjie%20Wang-Resume.pdf) here.
 
 ## Table of Contents
-- About
-- Project
+- [About]()
+- [Project]()
   - SQL
-    - Database Design for Hotel
+    - [Database Design for Hotel]()
     
   - Power BI
-    - Job Placement Data Analytics & Automation Dashboard
+    - [Job Placement Data Analytics & Automation Dashboard]()
       
   - Tableau
-    - Google Fiber Dashboard
+    - [Google Fiber Dashboard]()
       
   - Python
-    - Ride-Hailing Data Analysis & Predictive Modeling for Pricing and Dispatch Optimization
-    - Customer Churn Analysis for Credit Card Department
-    - Flight Cancellation & Punctuality Rate Prediction
+    - [Ride-Hailing Data Analysis & Predictive Modeling for Pricing and Dispatch Optimization]()
+    - [Flight Cancellation & Punctuality Rate Prediction]()
       
   - R
-    - Electricity Consumption Prediction Model Evaluation
-  
+    - [Electricity Consumption Prediction Model Evaluation]()
+
+- [Education]()
+
+## Project
+### SQL
+- Database Design for Hotel
+  - Project Summary: 
+  - Code:
+  - Report:
+  - Skills: 
+    
+### Power BI
+- Job Placement Data Analytics & Automation Dashboard
+  - Project Summary: 
+  - Code: 
+  - Report: 
+  - Skills:
+
+### Tableau
+- Google Fiber Dashboard
+  - Project Summary: 
+  - Code: 
+  - Report: 
+  - Skills:
+
+### Python
+- Ride-Hailing Data Analysis & Predictive Modeling for Pricing and Dispatch Optimization
+  - Project Summary: 
+  - Code: 
+  - Report: 
+  - Skills:
+
+- Flight Cancellation & Punctuality Rate Prediction
+  - Project Summary: 
+  - Code: 
+  - Report: 
+  - Skills:
+ 
+### R
+- Electricity Consumption Prediction Model Evaluation
+  - Project Summary: 
+  - Code: 
+  - Report: 
+  - Skills:
+
 ## Education
   - MS in Analytics | University of California, Berkeley (_Aug 2022 - Aug 2023_)
   - BA in Quantitative Economics | University of California, Irvine (_Sep 2019 - June 2022_)
