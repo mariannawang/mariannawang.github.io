@@ -6,4 +6,28 @@ I am passionate about leveraging data to solve complex problems, enhance operati
 
 This is a repository to showcase skills and share projects in Data Analytics / Data Science related topics.
 
-Find my [CV]() here.
+Find my [CV](https://github.com/mariannawang/mariannawang.github.io/blob/main/Mengjie%20Wang-Resume.pdf) here.
+
+## Table of Contents
+- About
+- Project
+  - SQL
+    - Database Design for Hotel
+    
+  - Power BI
+    - Job Placement Data Analytics & Automation Dashboard
+      
+  - Tableau
+    - Google Fiber Dashboard
+      
+  - Python
+    - Ride-Hailing Data Analysis & Predictive Modeling for Pricing and Dispatch Optimization
+    - Customer Churn Analysis for Credit Card Department
+    - Flight Cancellation & Punctuality Rate Prediction
+      
+  - R
+    - Electricity Consumption Prediction Model Evaluation
+  
+- Education
+  - MS in Analytics | University of California, Berkeley (_2022-2023_)
+  - BA in Quantitative Economics | University of California, Irvine (_2019-2022)
