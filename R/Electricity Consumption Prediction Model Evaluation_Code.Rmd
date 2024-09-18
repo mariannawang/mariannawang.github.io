@@ -1,0 +1,353 @@
+---
+title: "Econ 128 Final 2.0"
+output: html_document
+---
+
+```{r}
+setwd("/Users/wangmengjie/Desktop")
+data <- read.csv("econ128.csv")
+head(data)
+```
+# Data Cleaning
+
+```{r}
+# The data has 234560 observations, or rows, and 28 variables, or columns
+dim(data)
+```
+
+```{r}
+# Using the na.omit() function to simply remove the rows with missing values. By using this we delete 234560-221520 = 13040 rows, which is 5% of the original data, and I think it's fine.
+data <- na.omit(data)
+dim(data)
+```
+```{r}
+summary(data)
+```
+#Get rid of the outlier (luse1 < 0), we delete 221520-221510 = 10 rows and get the new dataset: data2.
+```{r} 
+data2 <- subset(data, 0 < luse1)
+summary(data2)
+dim(data2)
+```
+# Correlation 
+```{r}
+cor(data2[sapply(data2, is.numeric)])
+```
+
+# Split the data into 5 different groups according to month.
+```{r}
+data_4 <- subset (data2, month == 4)
+data_5 <- subset (data2, month == 5)
+data_6<- subset (data2, month == 6)
+data_7 <- subset (data2, month == 7)
+data_8 <- subset (data2, month == 8)
+```
+
+# Use April first.(I tried to use the entire control group of 2010 to predict at the very end of the code (starts line 263 and we can get the same result).)
+```{r}
+# Split the data set
+library(glmnet)
+data_c4 <- subset(data_4, control == 1)
+data_c5 <- subset(data_5, control == 1)
+data_c6 <- subset(data_6, control == 1)
+data_c7 <- subset(data_7, control == 1)
+data_c8 <- subset(data_8, control == 1)
+x <- model.matrix(lusage ~ .-year-month, data = data_c4)
+y <- data_c4$lusage
+
+
+set.seed(1)
+train0 <- subset(data_c4, year == 2010)
+test0 <- subset(data_c4, year == 2011)
+train <- which(train0$year == 2010)
+test <- which(test0$year == 2011)
+y.test <- y[test]
+```
+# Lasso
+```{r}
+grid <- 10^seq(10, -2, length = 100)
+lasso.mod <- glmnet(x[train, ], y[train], alpha = 1,
+    lambda = grid, standardize = TRUE)
+plot(lasso.mod)
+```
+```{r}
+set.seed(1)
+cv.out <- cv.glmnet(x[train, ], y[train], alpha = 1)
+plot(cv.out)
+```
+```{r}
+bestlam <- cv.out$lambda.min
+lasso.pred <- predict(lasso.mod, s = bestlam,
+    newx = x[test, ])
+mean((lasso.pred - y[test])^2)
+```
+```{r}
+out <- glmnet(x, y, alpha = 1, lambda = grid)
+lasso.coef <- predict(out, type = "coefficients",
+    s = bestlam)[1:27, ]
+lasso.coef
+
+```
+```{r}
+lasso.coef[lasso.coef != 0]
+```
+
+
+
+#Cross validation using linear regression model, the result shows the mse is smaller than lasso.
+```{r}
+lm.fit <- lm(lusage ~ .-year-month-control-treatment, data = data_c4, subset = train)
+attach(data_c4)
+mean((lusage - predict(lm.fit, data_c4))[test]^2)
+```
+# We now build a decision tree
+```{r}
+library(tree)
+tree <- tree(lusage ~ .-year-month-control-treatment, data_c4, subset = train)
+summary(tree)
+```
+```{r}
+plot(tree)
+text(tree, pretty = 0)
+```
+# Cross Validation for tree
+```{r}
+yhat <- predict(tree, newdata = data_c4[test, ])
+data.test <- data_c4[test, "lusage"]
+plot(yhat, data.test)
+abline(0, 1)
+```
+```{r}
+mean((yhat - data.test)^2)
+```
+# Bagging and Random Forest
+```{r}
+library(randomForest)
+set.seed(1)
+bag.data <- randomForest(lusage ~ .-year-month-control-treatment, data_c4, subset = train, mtry = 12, importance = TRUE)
+bag.data
+```
+```{r}
+yhat.bag <- predict(bag.data, newdata = data_c4[test, ])
+plot(yhat.bag, data.test)
+abline(0, 1)
+```
+```{r}
+mean((yhat.bag - data.test)^2)
+```
+```{r}
+set.seed(1)
+rf.data <- randomForest(lusage ~ .-year-month-control-treatment, data = data_c4,
+    subset = train, mtry = 6, importance = TRUE)
+yhat.rf <- predict(rf.data, newdata = data_c4[test, ])
+mean((yhat.rf - data.test)^2)
+
+```
+```{r}
+importance(rf.data)
+```
+# From the result of MSE, we can see that the random forest works best, so we apply this method to the control groups for every month to build 5 models.
+```{r}
+# May
+set.seed(1)
+bag.data5 <- randomForest(lusage ~ .-year-month-control-treatment, data_c5, subset = train, mtry = 12, importance = TRUE)
+bag.data5
+```
+
+```{r}
+# June
+set.seed(1)
+bag.data6 <- randomForest(lusage ~ .-year-month-control-treatment, data_c6, subset = train, mtry = 12, importance = TRUE)
+bag.data6
+```
+
+```{r}
+# July
+set.seed(1)
+bag.data7 <- randomForest(lusage ~ .-year-month-control-treatment, data_c7, subset = train, mtry = 12, importance = TRUE)
+bag.data7
+```
+
+```{r}
+# August
+set.seed(1)
+bag.data8 <- randomForest(lusage ~ .-year-month-control-treatment, data_c8, subset = train, mtry = 12, importance = TRUE)
+bag.data8
+```
+
+
+
+
+
+
+
+# Apply Random Forest to the treatment groups 2011 for every month.
+```{r}
+data_t4 <- subset(data_4, control == 0)
+data_t5 <- subset(data_5, control == 0)
+data_t6 <- subset(data_6, control == 0)
+data_t7 <- subset(data_7, control == 0)
+data_t8 <- subset(data_8, control == 0)
+
+pred04 <- subset(data_t4, year == 2011)
+pred4 <- which(pred04$year == 2011)
+#y.test <- y[test]
+pred05 <- subset(data_t5, year == 2011)
+pred5 <- which(pred05$year == 2011)
+
+pred06 <- subset(data_t6, year == 2011)
+pred6 <- which(pred06$year == 2011)
+
+pred07 <- subset(data_t7, year == 2011)
+pred7 <- which(pred07$year == 2011)
+
+pred08 <- subset(data_t8, year == 2011)
+pred8 <- which(pred08$year == 2011)
+```
+# For April
+```{r}
+yhat.bag4 <- predict(bag.data, newdata = data_t4[pred4, ])
+data.test4 <- data_t4[pred4, "lusage"]
+plot(yhat.bag4, data.test4)
+abline(0, 1)
+```
+
+```{r}
+mean((yhat.bag4 - data.test4)^2)
+```
+# For May
+```{r}
+yhat.bag5 <- predict(bag.data5, newdata = data_t5[pred5, ])
+data.test5 <- data_t5[pred5, "lusage"]
+plot(yhat.bag5, data.test5)
+abline(0, 1)
+```
+
+```{r}
+mean((yhat.bag5 - data.test5)^2)
+```
+# For June
+```{r}
+yhat.bag6 <- predict(bag.data6, newdata = data_t6[pred6, ])
+data.test6 <- data_t6[pred6, "lusage"]
+plot(yhat.bag6, data.test6)
+abline(0, 1)
+```
+
+```{r}
+mean((yhat.bag6 - data.test6)^2)
+```
+# For July
+```{r}
+yhat.bag7 <- predict(bag.data7, newdata = data_t7[pred7, ])
+data.test7 <- data_t7[pred7, "lusage"]
+plot(yhat.bag7, data.test7)
+abline(0, 1)
+```
+
+```{r}
+mean((yhat.bag7 - data.test7)^2)
+```
+# For August
+```{r}
+yhat.bag8 <- predict(bag.data8, newdata = data_t8[pred8, ])
+data.test8 <- data_t8[pred8, "lusage"]
+plot(yhat.bag8, data.test8)
+abline(0, 1)
+```
+
+```{r}
+mean((yhat.bag8 - data.test8)^2)
+```
+
+## Use the whole control group of 2010 instead of just the April data.
+
+```{r}
+# Split the data first
+data_c <- subset(data2, control == 1)
+x0 <- model.matrix(lusage ~ .-year-month, data = data_c)
+y0 <- data_c$lusage
+
+
+set.seed(1)
+train00 <- subset(data_c, year == 2010)
+test00 <- subset(data_c, year == 2011)
+train0 <- which(train00$year == 2010)
+test0 <- which(test00$year == 2011)
+y.test <- y[test0]
+```
+# Lasso
+```{r}
+grid <- 10^seq(10, -2, length = 100)
+lasso.mod0 <- glmnet(x0[train0, ], y0[train0], alpha = 1,
+    lambda = grid, standardize = TRUE)
+plot(lasso.mod0)
+```
+```{r}
+set.seed(1)
+cv.out0 <- cv.glmnet(x0[train0, ], y0[train0], alpha = 1)
+plot(cv.out0)
+```
+```{r}
+bestlam0 <- cv.out0$lambda.min
+lasso.pred0 <- predict(lasso.mod0, s = bestlam0,
+    newx = x0[test0, ])
+mean((lasso.pred0 - y0[test0])^2)
+```
+```{r}
+out <- glmnet(x, y, alpha = 1, lambda = grid)
+lasso.coef <- predict(out, type = "coefficients",
+    s = bestlam)[1:27, ]
+lasso.coef
+lasso.coef[lasso.coef != 0]
+```
+# Linear Regression
+#Cross validation using linear regression model, the result shows the mse is smaller than lasso.
+```{r}
+lm.fit0 <- lm(lusage ~ .-year-month-control-treatment, data = data_c, subset = train0)
+attach(data_c)
+mean((lusage - predict(lm.fit0, data_c))[test0]^2)
+```
+# We now build a decision tree
+```{r}
+library(tree)
+tree0 <- tree(lusage ~ .-year-month-control-treatment, data_c, subset = train0)
+summary(tree0)
+```
+```{r}
+plot(tree0)
+text(tree0, pretty = 0)
+```
+# Cross Validation for tree
+```{r}
+yhat0 <- predict(tree0, newdata = data_c[test0, ])
+data.test0 <- data_c[test0, "lusage"]
+plot(yhat0, data.test0)
+abline(0, 1)
+```
+```{r}
+mean((yhat0 - data.test0)^2)
+```
+# Bagging and Random Forest
+```{r}
+library(randomForest)
+set.seed(1)
+bag.data0 <- randomForest(lusage ~ .-year-month-control-treatment, data_c, subset = train0, mtry = 12, importance = TRUE)
+bag.data0
+```
+```{r}
+yhat.bag0 <- predict(bag.data0, newdata = data_c[test0, ])
+plot(yhat.bag0, data.test0)
+abline(0, 1)
+```
+```{r}
+mean((yhat.bag0 - data.test0)^2)
+```
+```{r}
+#set.seed(1)
+#rf.data0 <- randomForest(lusage ~ .-year-month-control-treatment, data = data_c, subset = train0, mtry = 6, importance = TRUE)
+#yhat.rf0 <- predict(rf.data0, newdata = data_c[test0, ])
+#mean((yhat.rf0 - data.test0)^2)
+
+```
+
