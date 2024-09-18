@@ -23,7 +23,8 @@ Find my [CV](https://github.com/mariannawang/mariannawang.github.io/blob/main/Me
   - Python
     - [Ride-Hailing Data Analysis & Predictive Modeling for Pricing]()
     - [Flight Cancellation & Punctuality Rate Prediction]()
-      
+    - [Resume Screening and Keyword Matching Automation]()
+  
   - R
     - [Electricity Consumption Prediction Model Evaluation]()
 
@@ -59,6 +60,12 @@ Find my [CV](https://github.com/mariannawang/mariannawang.github.io/blob/main/Me
   - Skills:
 
 - Flight Cancellation & Punctuality Rate Prediction
+  - Project Summary: 
+  - Code: 
+  - Report: 
+  - Skills:
+    
+- Resume Screening and Keyword Matching Automation
   - Project Summary: 
   - Code: 
   - Report: 
