@@ -34,8 +34,7 @@ Find my [CV](https://github.com/mariannawang/mariannawang.github.io/blob/main/Me
 ### SQL
 - Database Design for Hotel
   - Project Summary: 
-  - Code: [Code Database Design for Hotel]()
-  - Report: [Report Database Design for Hotel]()
+  - Report: [Report Database Design for Hotel](https://github.com/mariannawang/mariannawang.github.io/blob/main/SQL/Database%20Design%20for%20Hotel.pdf)
   - Skills: 
     
 ### Power BI
@@ -55,26 +54,26 @@ Find my [CV](https://github.com/mariannawang/mariannawang.github.io/blob/main/Me
 ### Python
 - Ride-Hailing Data Analysis & Predictive Modeling for Pricing and Dispatch Optimization
   - Project Summary: 
-  - Code: [Code Ride-Hailing Data Analysis & Predictive Modeling for Pricing and Dispatch Optimization]()
-  - Report: [Report Ride-Hailing Data Analysis & Predictive Modeling for Pricing and Dispatch Optimization]()
+  - Code: [Code Ride-Hailing Data Analysis & Predictive Modeling for Pricing and Dispatch Optimization](https://github.com/mariannawang/mariannawang.github.io/blob/main/Python/Ride-Hailing%20Data%20Analysis%20%26%20Predictive%20Modeling%20for%20Pricing%20Code.ipynb)
+  - Report: [Report Ride-Hailing Data Analysis & Predictive Modeling for Pricing and Dispatch Optimization](https://github.com/mariannawang/mariannawang.github.io/blob/main/Python/Uber%20Report.pdf)
   - Skills:
 
 - Flight Cancellation & Punctuality Rate Prediction
   - Project Summary: 
-  - Code: [Code Flight Cancellation & Punctuality Rate Prediction]()
-  - Report: [Report Flight Cancellation & Punctuality Rate Prediction]()
+  - Code: [Code Flight Cancellation & Punctuality Rate Prediction](https://github.com/mariannawang/mariannawang.github.io/blob/main/Python/Flight%20Cancellation%20%26%20Punctuality%20Rate%20Prediction%20Code.ipynb)
+  - Report: [Report Flight Cancellation & Punctuality Rate Prediction](https://github.com/mariannawang/mariannawang.github.io/blob/main/Python/Project_Report.pdf)
   - Skills:
     
 - Resume Screening and Keyword Matching Automation
   - Project Summary: 
-  - Code: [Code Resume Screening and Keyword Matching Automation]()
+  - Code: [Code Resume Screening and Keyword Matching Automation](https://github.com/mariannawang/mariannawang.github.io/blob/main/Python/Candidate_Sell.ipynb)
   - Skills:
  
 ### R
 - Electricity Consumption Prediction Model Evaluation
   - Project Summary: 
-  - Code: [Code Electricity Consumption Prediction Model Evaluation]()
-  - Report: [Report Electricity Consumption Prediction Model Evaluation]()
+  - Code: [Code Electricity Consumption Prediction Model Evaluation](https://github.com/mariannawang/mariannawang.github.io/blob/main/R/Electricity%20Consumption%20Prediction%20Model%20Evaluation_Code.Rmd)
+  - Report: [Report Electricity Consumption Prediction Model Evaluation](https://github.com/mariannawang/mariannawang.github.io/blob/main/R/Project_Report.pdf)
   - Skills:
 
 ## Education
