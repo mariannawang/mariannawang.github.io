@@ -18,7 +18,7 @@ Find my [CV](https://github.com/mariannawang/mariannawang.github.io/blob/main/Me
     - [Job Placement Data Analytics & Automation Dashboard](https://github.com/mariannawang/mariannawang.github.io/blob/main/README.md#power-bi)
       
   - Tableau
-    - [Google Fiber Dashboard](https://github.com/mariannawang/mariannawang.github.io/blob/main/README.md#tableau)
+    - [Google Fiber Customer Service FCR Dashboard](https://github.com/mariannawang/mariannawang.github.io/blob/main/README.md#tableau)
       
   - Python
     - [Ride-Hailing Data Analysis & Predictive Modeling for Pricing](https://github.com/mariannawang/mariannawang.github.io/blob/main/README.md#python)
@@ -46,11 +46,9 @@ Find my [CV](https://github.com/mariannawang/mariannawang.github.io/blob/main/Me
 
 
 ### Tableau
-- Google Fiber Dashboard
-  - Project Summary: 
-  - Code: 
-  - Report: 
-  - Skills:
+- Google Fiber Customer Service FCR Dashboard
+  - Project Summary: This project analyzed repeat customer calls for the Google Fiber Customer Service Team to identify patterns and provide actionable insights. Using data from three months in 2022, the analysis revealed that 80.24% of repeat calls were related to internet and wifi issues (Type_5) and technician troubleshooting (Type_2), with Market_1 generating the highest volume of repeat calls. The results were visualized in an interactive Tableau dashboard, offering recommendations to improve service efficiency. These include providing additional training for handling technical issues and allocating more resources to Market_1 to reduce repeat calls and enhance customer satisfaction.
+  - [Tableau Public]()
 
 ### Python
 - Ride-Hailing Data Analysis & Predictive Modeling for Pricing and Dispatch Optimization
@@ -81,3 +79,4 @@ Find my [CV](https://github.com/mariannawang/mariannawang.github.io/blob/main/Me
 ## Education
   - MS in Analytics | University of California, Berkeley (_Aug 2022 - Aug 2023_)
   - BA in Quantitative Economics | University of California, Irvine (_Sep 2019 - June 2022_)
+  - [Google Business Intelligence Specialization](https://www.coursera.org/account/accomplishments/specialization/EDRC4Q83ULN1) (Aug 2024)
