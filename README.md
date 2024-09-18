@@ -21,7 +21,7 @@ Find my [CV](https://github.com/mariannawang/mariannawang.github.io/blob/main/Me
     - [Google Fiber Dashboard]()
       
   - Python
-    - [Ride-Hailing Data Analysis & Predictive Modeling for Pricing and Dispatch Optimization]()
+    - [Ride-Hailing Data Analysis & Predictive Modeling for Pricing]()
     - [Flight Cancellation & Punctuality Rate Prediction]()
       
   - R
