@@ -12,21 +12,21 @@ Find my [CV](https://github.com/mariannawang/mariannawang.github.io/blob/main/Me
 - [About](https://github.com/mariannawang/mariannawang.github.io?tab=readme-ov-file#about)
 - [Project](https://github.com/mariannawang/mariannawang.github.io?tab=readme-ov-file#project)
   - SQL
-    - [Database Design for Hotel]()
+    - [Database Design for Hotel](https://github.com/mariannawang/mariannawang.github.io/blob/main/README.md#sql)
     
   - Power BI
-    - [Job Placement Data Analytics & Automation Dashboard]()
+    - [Job Placement Data Analytics & Automation Dashboard](https://github.com/mariannawang/mariannawang.github.io/blob/main/README.md#power-bi)
       
   - Tableau
-    - [Google Fiber Dashboard]()
+    - [Google Fiber Dashboard](https://github.com/mariannawang/mariannawang.github.io/blob/main/README.md#tableau)
       
   - Python
-    - [Ride-Hailing Data Analysis & Predictive Modeling for Pricing]()
-    - [Flight Cancellation & Punctuality Rate Prediction]()
-    - [Resume Screening and Keyword Matching Automation]()
+    - [Ride-Hailing Data Analysis & Predictive Modeling for Pricing](https://github.com/mariannawang/mariannawang.github.io/blob/main/README.md#python)
+    - [Flight Cancellation & Punctuality Rate Prediction](https://github.com/mariannawang/mariannawang.github.io/blob/main/README.md#python)
+    - [Resume Screening and Keyword Matching Automation](https://github.com/mariannawang/mariannawang.github.io/blob/main/README.md#python)
   
   - R
-    - [Electricity Consumption Prediction Model Evaluation]()
+    - [Electricity Consumption Prediction Model Evaluation](https://github.com/mariannawang/mariannawang.github.io/blob/main/README.md#r)
 
 - [Education](https://github.com/mariannawang/mariannawang.github.io?tab=readme-ov-file#education)
 
@@ -34,15 +34,15 @@ Find my [CV](https://github.com/mariannawang/mariannawang.github.io/blob/main/Me
 ### SQL
 - Database Design for Hotel
   - Project Summary: 
-  - Code:
-  - Report:
+  - Code: [Code Database Design for Hotel]()
+  - Report: [Report Database Design for Hotel]()
   - Skills: 
     
 ### Power BI
 - Job Placement Data Analytics & Automation Dashboard
   - Project Summary: 
-  - Code: 
-  - Report: 
+  - Code: [Code Job Placement Data Analytics & Automation Dashboard]()
+  - Report: [Report Job Placement Data Analytics & Automation Dashboard]()
   - Skills:
 
 ### Tableau
@@ -55,27 +55,26 @@ Find my [CV](https://github.com/mariannawang/mariannawang.github.io/blob/main/Me
 ### Python
 - Ride-Hailing Data Analysis & Predictive Modeling for Pricing and Dispatch Optimization
   - Project Summary: 
-  - Code: 
-  - Report: 
+  - Code: [Code Ride-Hailing Data Analysis & Predictive Modeling for Pricing and Dispatch Optimization]()
+  - Report: [Report Ride-Hailing Data Analysis & Predictive Modeling for Pricing and Dispatch Optimization]()
   - Skills:
 
 - Flight Cancellation & Punctuality Rate Prediction
   - Project Summary: 
-  - Code: 
-  - Report: 
+  - Code: [Code Flight Cancellation & Punctuality Rate Prediction]()
+  - Report: [Report Flight Cancellation & Punctuality Rate Prediction]()
   - Skills:
     
 - Resume Screening and Keyword Matching Automation
   - Project Summary: 
-  - Code: 
-  - Report: 
+  - Code: [Code Resume Screening and Keyword Matching Automation]()
   - Skills:
  
 ### R
 - Electricity Consumption Prediction Model Evaluation
   - Project Summary: 
-  - Code: 
-  - Report: 
+  - Code: [Code Electricity Consumption Prediction Model Evaluation]()
+  - Report: [Report Electricity Consumption Prediction Model Evaluation]()
   - Skills:
 
 ## Education
