@@ -9,8 +9,8 @@ This is a repository to showcase skills and share projects in Data Analytics / D
 Find my [CV](https://github.com/mariannawang/mariannawang.github.io/blob/main/Mengjie%20Wang-Resume.pdf) here.
 
 ## Table of Contents
-- [About]()
-- [Project]()
+- [About](https://github.com/mariannawang/mariannawang.github.io?tab=readme-ov-file#about)
+- [Project](https://github.com/mariannawang/mariannawang.github.io?tab=readme-ov-file#project)
   - SQL
     - [Database Design for Hotel]()
     
@@ -27,7 +27,7 @@ Find my [CV](https://github.com/mariannawang/mariannawang.github.io/blob/main/Me
   - R
     - [Electricity Consumption Prediction Model Evaluation]()
 
-- [Education]()
+- [Education](https://github.com/mariannawang/mariannawang.github.io?tab=readme-ov-file#education)
 
 ## Project
 ### SQL
