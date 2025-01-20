@@ -6,7 +6,7 @@ I am passionate about leveraging data to solve complex problems, enhance operati
 
 This is a repository to showcase skills and share projects in Data Analytics / Data Science related topics.
 
-Find my [CV](https://github.com/mariannawang/mariannawang.github.io/blob/main/Mengjie%20Wang-Resume.pdf) here.
+Find my [CV](https://github.com/mariannawang/mariannawang.github.io/blob/main/2025_Mengjie%20(Marianna)%20Wang.pdf) here.
 
 ## Table of Contents
 - [About](https://github.com/mariannawang/mariannawang.github.io?tab=readme-ov-file#about)
